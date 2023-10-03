@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import LogoImg from '../../imgs/planet.png';
 
 const NavBar = () => (
@@ -34,23 +35,19 @@ const NavBar = () => (
       <div id="navcol-2" className="collapse navbar-collapse">
         <ul className="navbar-nav ms-auto">
           <li className="nav-item">
-            <a className="nav-link active" href="/">
+            <NavLink exact activeClassName="active" className="nav-link" to="/">
               Rockets
-            </a>
+            </NavLink>
           </li>
-          <li className="nav-item">
-            <a
-              className="nav-link"
-              href="/missions"
-              style={{ borderRightWidth: 1, borderRightStyle: 'solid' }}
-            >
+          <li className="nav-item" style={{ borderRightWidth: 1, borderRightStyle: 'solid' }}>
+            <NavLink activeClassName="active" className="nav-link" to="/missions">
               Missions
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="profile">
+            <NavLink activeClassName="active" className="nav-link" to="/profile">
               My Profile
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>
