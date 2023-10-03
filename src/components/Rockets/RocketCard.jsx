@@ -1,17 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { reserveRocket } from '../../redux/features/rocket/rocketSlice';
+import { reserveRocket, cancelReservation } from '../../redux/features/rocket/rocketSlice';
 
 const RocketCard = ({ rocket }) => {
   const dispatch = useDispatch();
 
   const {
-    id, name, description, flickr_images: flickrImages,
+    id, name, description, flickr_images: flickrImages, reserved,
   } = rocket || '';
 
   const handleReserveRocket = (id) => {
     dispatch(reserveRocket(id));
+  };
+
+  const handleCancelReservation = (id) => {
+    dispatch(cancelReservation(id));
   };
 
   return (
@@ -34,13 +38,24 @@ const RocketCard = ({ rocket }) => {
               <p className="card-text">
                 {description}
               </p>
-              <button
-                onClick={() => handleReserveRocket(id)}
-                className="btn btn-primary"
-                type="button"
-              >
-                Reserve Rocket
-              </button>
+              {reserved ? (
+                <button
+                  onClick={() => handleCancelReservation(id)}
+                  className="btn btn-outline-secondary"
+                  type="button"
+                >
+                  Cancel Reservation
+                </button>
+              ) : (
+                <button
+                  onClick={() => handleReserveRocket(id)}
+                  className="btn btn-primary"
+                  type="button"
+                >
+                  Reserve Rocket
+                </button>
+              )}
+
             </div>
           </div>
         </div>
@@ -55,6 +70,7 @@ RocketCard.propTypes = {
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     flickrImages: PropTypes.string.isRequired,
+    reserved: PropTypes.bool.isRequired,
   }).isRequired,
 };
 
