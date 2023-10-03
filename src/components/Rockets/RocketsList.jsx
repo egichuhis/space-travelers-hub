@@ -11,9 +11,12 @@ const RocketsList = () => {
     dispatch(fetchRockets());
   }, [dispatch]);
 
+  const rockets = myRockets[1];
+  console.log('carnivore_rockets', rockets);
+
   return (
     <div>
-      {myRockets.map((rocket) => (
+      {rockets.map((rocket) => (
         <ul key={rocket.id} className="list-unstyled">
           <li>
             <RocketCard rocket={rocket} />

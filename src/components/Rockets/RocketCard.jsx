@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const RocketCard = ({ rocket }) => {
-  const { name, description, flickr_images: flickrImages } = rocket[0] || '';
+  const { name, description, flickr_images: flickrImages } = rocket || '';
 
   return (
     <div className="container py-4 py-xl-5">
