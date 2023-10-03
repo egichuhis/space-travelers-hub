@@ -12,7 +12,7 @@ export const fetchRockets = createAsyncThunk('rocket/fetchRockets', async () => 
   return response.data;
 });
 
-export const rocketsSlice = createSlice(
+export const rocketSlice = createSlice(
   {
     name: 'rocket',
     initialState,
@@ -41,4 +41,4 @@ export const rocketsSlice = createSlice(
   },
 );
 
-export default rocketsSlice.reducer;
+export default rocketSlice.reducer;
