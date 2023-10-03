@@ -29,7 +29,7 @@ export const rocketSlice = createSlice(
       });
       builder.addCase(fetchRockets.fulfilled, (state, action) => {
         state.loading = false;
-        state.rockets = Object.values(action);
+        state.rockets = action.payload;
         state.error = '';
       });
       builder.addCase(fetchRockets.rejected, (state, action) => {

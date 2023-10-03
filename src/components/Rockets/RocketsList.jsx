@@ -11,8 +11,7 @@ const RocketsList = () => {
     dispatch(fetchRockets());
   }, [dispatch]);
 
-  const rockets = myRockets[1];
-  console.log('carnivore_rockets', rockets);
+  const rockets = Array.isArray(myRockets) ? myRockets : [];
 
   return (
     <div>
