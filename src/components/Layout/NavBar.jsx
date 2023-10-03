@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoImg from '../imgs/planet.png';
+import LogoImg from '../../imgs/planet.png';
 
 const NavBar = () => (
   <nav

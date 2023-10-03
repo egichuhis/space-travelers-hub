@@ -1,5 +1,5 @@
 import React from 'react';
-import RocketImg from '../imgs/rocket.jpeg';
+import RocketImg from '../../imgs/rocket.jpeg';
 
 const RocketCard = () => (
   <div className="container py-4 py-xl-5">
