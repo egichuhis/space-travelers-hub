@@ -1,9 +1,11 @@
 import React from 'react';
-import NavBar from './NavBar';
+import NavBar from '../Layout/NavBar';
+import RocketsList from './RocketsList';
 
 const Rockets = () => (
   <>
     <NavBar />
+    <RocketsList />
   </>
 );
 
