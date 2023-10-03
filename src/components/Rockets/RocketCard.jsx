@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const RocketCard = ({ rocket }) => {
   const { name, description, flickr_images: flickrImages } = rocket[0] || '';
-  console.log('img', flickrImages);
 
   return (
     <div className="container py-4 py-xl-5">

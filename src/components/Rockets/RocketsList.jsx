@@ -11,8 +11,6 @@ const RocketsList = () => {
     dispatch(fetchRockets());
   }, [dispatch]);
 
-  console.log('Hehehehe', myRockets);
-
   return (
     <div>
       {myRockets.map((rocket) => (
