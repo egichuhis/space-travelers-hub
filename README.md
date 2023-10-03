@@ -51,6 +51,8 @@
 ### Key Features <a name="key-features"></a>
 
 - **Nav Bar**
+- **Fetch Rockets & Display**
+- **Book and Cancel Rocket**
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -126,6 +128,11 @@ Example command:
 - GitHub: [@githubhandle](https://github.com/egichuhis)
 - Twitter: [@twitterhandle](https://twitter.com/egichuhis)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/edwin-gichuhi/)
+
+👤 **Eric Mawudeku**
+
+- GitHub: [@githubhandle](https://github.com/erickma1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/eric-mawudeku-55b74883/)
 
 ## 🔭 Future Features <a name="future-features"></a>
 
