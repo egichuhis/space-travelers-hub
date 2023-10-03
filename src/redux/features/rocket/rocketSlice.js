@@ -9,7 +9,14 @@ const initialState = {
 
 export const fetchRockets = createAsyncThunk('rocket/fetchRockets', async () => {
   const response = await axios.get('https://api.spacexdata.com/v4/rockets');
-  return response.data;
+  const rocketsData = response.data.map((rocket) => ({
+    id: rocket.id,
+    name: rocket.name,
+    description: rocket.description,
+    flickr_images: rocket.flickr_images,
+    reserved: false,
+  }));
+  return rocketsData;
 });
 
 export const rocketSlice = createSlice(
@@ -17,10 +24,17 @@ export const rocketSlice = createSlice(
     name: 'rocket',
     initialState,
     reducers: {
-      removeRocket: (state, action) => {
-        state.rockets = state.rockets.filter(
-          (book) => book.itemId !== action.payload,
-        );
+      reserveRocket: (state, action) => {
+        state.rockets = state.rockets.map((rocket) => {
+          if (rocket.id !== action.payload) return rocket;
+          return { ...rocket, reserved: true };
+        });
+      },
+      cancelReservation: (state, action) => {
+        state.rockets = state.rockets.map((rocket) => {
+          if (rocket.id !== action.payload) return rocket;
+          return { ...rocket, reserved: false };
+        });
       },
     },
     extraReducers: (builder) => {
@@ -29,7 +43,7 @@ export const rocketSlice = createSlice(
       });
       builder.addCase(fetchRockets.fulfilled, (state, action) => {
         state.loading = false;
-        state.rockets = Object.values(action);
+        state.rockets = action.payload;
         state.error = '';
       });
       builder.addCase(fetchRockets.rejected, (state, action) => {
@@ -40,5 +54,7 @@ export const rocketSlice = createSlice(
     },
   },
 );
+
+export const { reserveRocket, cancelReservation } = rocketSlice.actions;
 
 export default rocketSlice.reducer;

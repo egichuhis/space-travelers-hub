@@ -11,9 +11,11 @@ const RocketsList = () => {
     dispatch(fetchRockets());
   }, [dispatch]);
 
+  const rockets = Array.isArray(myRockets) ? myRockets : [];
+
   return (
     <div>
-      {myRockets.map((rocket) => (
+      {rockets.map((rocket) => (
         <ul key={rocket.id} className="list-unstyled">
           <li>
             <RocketCard rocket={rocket} />
