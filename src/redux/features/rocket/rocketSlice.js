@@ -17,10 +17,11 @@ export const rocketSlice = createSlice(
     name: 'rocket',
     initialState,
     reducers: {
-      removeRocket: (state, action) => {
-        state.rockets = state.rockets.filter(
-          (book) => book.itemId !== action.payload,
-        );
+      reserveRocket: (state, action) => {
+        state.rockets = state.map((rocket) => {
+          if (rocket.id !== action.payload) return rocket;
+          return { ...rocket, reserved: true };
+        });
       },
     },
     extraReducers: (builder) => {
@@ -40,5 +41,7 @@ export const rocketSlice = createSlice(
     },
   },
 );
+
+export const { reserveRocket } = rocketSlice.actions;
 
 export default rocketSlice.reducer;

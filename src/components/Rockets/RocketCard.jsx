@@ -1,8 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { reserveRocket } from '../../redux/features/rocket/rocketSlice';
 
 const RocketCard = ({ rocket }) => {
-  const { name, description, flickr_images: flickrImages } = rocket || '';
+  const dispatch = useDispatch();
+
+  const {
+    id, name, description, flickr_images: flickrImages,
+  } = rocket || '';
+
+  const handleReserveRocket = (id) => {
+    dispatch(reserveRocket(id));
+  };
 
   return (
     <div className="container py-4 py-xl-5">
@@ -24,7 +34,11 @@ const RocketCard = ({ rocket }) => {
               <p className="card-text">
                 {description}
               </p>
-              <button className="btn btn-primary" type="button">
+              <button
+                onClick={() => handleReserveRocket(id)}
+                className="btn btn-primary"
+                type="button"
+              >
                 Reserve Rocket
               </button>
             </div>
