@@ -62,7 +62,7 @@ const NavBar = () => (
               <NavLink
                 activeClassName="active"
                 className="nav-link"
-                to="profile"
+                to="/profile"
               >
                 My Profile
               </NavLink>
