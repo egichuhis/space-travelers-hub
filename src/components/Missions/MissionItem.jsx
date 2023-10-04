@@ -23,7 +23,13 @@ const MissionItem = ({
       <td>{name}</td>
       <td>{description}</td>
       <td className="text-center">
-        <span className="badge badge-secondary bg-secondary">NOT A MEMBER</span>
+        <span
+          className={`badge ${
+            reserved ? ' badge-info bg-info' : ' badge-secondary bg-secondary'
+          }`}
+        >
+          {reserved ? 'Active Member' : 'NOT A MEMBER'}
+        </span>
       </td>
       <td className="w-15 text-center">
         <button
