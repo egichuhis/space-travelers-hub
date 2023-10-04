@@ -52,7 +52,10 @@
 
 - **Nav Bar**
 - **Fetch Rockets & Display**
-- **Book and Cancel Rocket**
+- **Fetch Missions & Display**
+- **Reserve and Cancel Rocket**
+- **Join and Leave Mission**
+- **My Profile Page**
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,9 +139,8 @@ Example command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Rocket Booking Page**
-- [ ] **Mission Reservation Page**
-- [ ] **My Profile Page**
+- [ ] **Tests using React Testing Library and Jest**
+- [ ] **Deployment**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
