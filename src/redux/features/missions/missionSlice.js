@@ -4,7 +4,7 @@ import axios from 'axios';
 const url = 'https://api.spacexdata.com/v3/missions';
 
 export const getMissionData = createAsyncThunk(
-  'Missions/getMissionItems',
+  'missions/getMissionItems',
   async (thunkAPI) => {
     try {
       const res = await axios.get(url);
@@ -15,14 +15,40 @@ export const getMissionData = createAsyncThunk(
   },
 );
 
+export const JOIN_MISSION = 'missions/joinMission';
+export const LEAVE_MISSION = 'missions/leaveMission';
+
+export const joinMission = (missionId) => ({
+  type: JOIN_MISSION,
+  payload: missionId,
+});
+export const leaveMission = (missionId) => ({
+  type: LEAVE_MISSION,
+  payload: missionId,
+});
+
 const initialState = {
   missionItem: [],
   isLoading: false,
 };
 
 const missionSlice = createSlice({
-  name: 'Missions',
+  name: 'missions',
   initialState,
+  reducers: {
+    joinMission: (state, action) => {
+      const missionId = action.payload;
+      state.missionItem = state.missionItem.map((mission) => (mission.mission_id === missionId
+        ? { ...mission, reserved: true }
+        : mission));
+    },
+    leaveMission: (state, action) => {
+      const missionId = action.payload;
+      state.missionItem = state.missionItem.map((mission) => (mission.mission_id === missionId
+        ? { ...mission, reserved: false }
+        : mission));
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getMissionData.pending, (state) => {
