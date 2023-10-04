@@ -53,7 +53,7 @@ const NavBar = () => (
               <NavLink
                 activeClassName="active"
                 className="nav-link"
-                to="/missions"
+                to="/Missions"
               >
                 Missions
               </NavLink>
@@ -62,7 +62,7 @@ const NavBar = () => (
               <NavLink
                 activeClassName="active"
                 className="nav-link"
-                to="profile"
+                to="/Profile"
               >
                 My Profile
               </NavLink>

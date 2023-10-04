@@ -4,7 +4,13 @@ import { useSelector } from 'react-redux';
 const Tables = () => {
   const myRockets = useSelector((state) => state.rocket.rockets);
 
+  const { missionItem } = useSelector((store) => store.missions);
+
   const rockets = Array.isArray(myRockets) ? myRockets : [];
+
+  const reservedMissions = missionItem.filter(
+    (mission) => mission.reserved === true,
+  );
 
   return (
     <div className="container" style={{ paddingTop: 15 }}>
@@ -21,18 +27,11 @@ const Tables = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Cell 1</td>
-                </tr>
-                <tr>
-                  <td>Cell 1</td>
-                </tr>
-                <tr>
-                  <td>Cell 1</td>
-                </tr>
-                <tr>
-                  <td>Cell 1</td>
-                </tr>
+                {reservedMissions.map((mission) => (
+                  <tr key={mission.mission_id}>
+                    <td>{mission.mission_name}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
@@ -62,7 +61,6 @@ const Tables = () => {
         </div>
       </div>
     </div>
-
   );
 };
 
