@@ -45,6 +45,9 @@
 <details>
   <summary>CSS & Bootstrap</summary>
 </details>
+<details>
+  <summary>Jest & React Testing Framework</summary>
+</details>
 
 <!-- Features -->
 
@@ -136,9 +139,7 @@ Example command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Rocket Booking Page**
-- [ ] **Mission Reservation Page**
-- [ ] **My Profile Page**
+- [ ] **Deployment**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

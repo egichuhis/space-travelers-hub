@@ -5,6 +5,7 @@ import { fetchRockets } from '../../redux/features/rocket/rocketSlice';
 
 const RocketsList = () => {
   const myRockets = useSelector((state) => state.rocket.rockets);
+  const isLoading = useSelector((state) => state.rocket.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,13 +16,17 @@ const RocketsList = () => {
 
   return (
     <div>
-      {rockets.map((rocket) => (
-        <ul key={rocket.id} className="list-unstyled">
-          <li>
-            <RocketCard rocket={rocket} />
-          </li>
-        </ul>
-      ))}
+      {isLoading ? (
+        <div className="loader-container">Loading...</div>
+      ) : (
+        rockets.map((rocket) => (
+          <ul key={rocket.id} className="list-unstyled">
+            <li>
+              <RocketCard rocket={rocket} />
+            </li>
+          </ul>
+        ))
+      )}
     </div>
   );
 };
