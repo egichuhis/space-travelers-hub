@@ -1,16 +1,10 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import RocketCard from './RocketCard';
-import { fetchRockets } from '../../redux/features/rocket/rocketSlice';
 
 const RocketsList = () => {
   const myRockets = useSelector((state) => state.rocket.rockets);
   const isLoading = useSelector((state) => state.rocket.loading);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchRockets());
-  }, [dispatch]);
 
   const rockets = Array.isArray(myRockets) ? myRockets : [];
 
