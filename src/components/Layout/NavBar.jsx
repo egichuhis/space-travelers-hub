@@ -5,25 +5,21 @@ import LogoImg from '../../imgs/planet.png';
 
 const NavBar = () => (
   <>
-    <nav
-      className="navbar navbar-expand-md bg-body py-3"
-      style={{ paddingTop: 16, paddingBottom: 16, boxShadow: '1px 1px' }}
-    >
+    <nav className="navbar navbar-expand-md bg-body py-3 shadow">
+
       <div className="container">
         <a className="navbar-brand d-flex align-items-center" href="/">
           <span
             className="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"
-            style={{ background: 'white' }}
           >
             <img
               src={LogoImg}
               alt="logo"
-              width={37}
-              height={71}
-              style={{ height: 50, width: 50 }}
+              className="img-fluid img-size-50"
             />
+
           </span>
-          <span style={{ marginLeft: 10 }}>Space Travelers Hub</span>
+          <span className="ms-2">Space Travelers Hub</span>
         </a>
         <button
           type="button"
@@ -45,10 +41,7 @@ const NavBar = () => (
                 Rockets
               </NavLink>
             </li>
-            <li
-              className="nav-item"
-              style={{ borderRightWidth: 1, borderRightStyle: 'solid' }}
-            >
+            <li className="nav-item border-end pe-2">
               <NavLink
                 activeclassname="active"
                 className="nav-link"
