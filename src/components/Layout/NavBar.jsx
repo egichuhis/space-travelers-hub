@@ -38,8 +38,7 @@ const NavBar = () => (
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <NavLink
-                exact
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-link"
                 to="/"
               >
@@ -51,7 +50,7 @@ const NavBar = () => (
               style={{ borderRightWidth: 1, borderRightStyle: 'solid' }}
             >
               <NavLink
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-link"
                 to="/Missions"
               >
@@ -60,7 +59,7 @@ const NavBar = () => (
             </li>
             <li className="nav-item">
               <NavLink
-                activeClassName="active"
+                activeclassname="active"
                 className="nav-link"
                 to="/Profile"
               >
