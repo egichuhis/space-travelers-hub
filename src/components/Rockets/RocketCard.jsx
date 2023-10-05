@@ -21,23 +21,20 @@ const RocketCard = ({ rocket }) => {
   return (
     <div className="container py-4 py-xl-5">
       <div className="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-        <div className="col-lg-4" style={{ width: '35%' }}>
+        <div className="col-lg-4 col-xl-3">
           <div className="card">
             <img
               alt="rocket"
-              className="card-img-top w-100 d-block fit-cover"
-              style={{ height: 200 }}
+              className="card-img-top w-100 d-block fit-cover img-fluid max-height-200"
               src={flickrImages}
             />
           </div>
         </div>
-        <div className="col-lg-8" style={{ width: '65%' }}>
+        <div className="col-lg-8 col-xl-9">
           <div className="card">
             <div className="card-body p-4">
               <h4 className="card-title">{name}</h4>
-              <p className="card-text">
-                {description}
-              </p>
+              <p className="card-text">{description}</p>
               {reserved ? (
                 <button
                   onClick={() => handleCancelReservation(id)}
@@ -55,7 +52,6 @@ const RocketCard = ({ rocket }) => {
                   Reserve Rocket
                 </button>
               )}
-
             </div>
           </div>
         </div>
