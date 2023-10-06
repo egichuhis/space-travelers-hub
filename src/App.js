@@ -4,9 +4,10 @@ import { useDispatch } from 'react-redux';
 import { fetchRockets } from './redux/features/rocket/rocketSlice';
 import { getMissionData } from './redux/features/missions/missionSlice';
 import './App.css';
-import Rockets from './components/Rockets/Rockets';
-import Profile from './components/Profile';
+import RocketsList from './components/Rockets/RocketsList';
+import Profile from './components/Profile/Profile';
 import Missions from './components/Missions/Missions';
+import NavBar from './components/Layout/NavBar';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,8 +19,9 @@ function App() {
 
   return (
     <BrowserRouter>
+      <NavBar />
       <Routes>
-        <Route path="/" element={<Rockets />} />
+        <Route path="/" element={<RocketsList />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Missions" element={<Missions />} />
       </Routes>

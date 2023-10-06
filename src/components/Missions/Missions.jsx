@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import MissionItem from './MissionItem';
-import NavBar from '../Layout/NavBar';
 
 const Missions = () => {
   const { missionItem, isLoading } = useSelector((store) => store.missions);
@@ -12,7 +11,6 @@ const Missions = () => {
 
   return (
     <>
-      <NavBar />
       <div className="container-fluid mt-5">
         <table className="table table-striped table-bordered">
           <thead>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet, NavLink, Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import './NavBar.css';
 import LogoImg from '../../imgs/planet.png';
 
@@ -63,7 +63,6 @@ const NavBar = () => (
         </div>
       </div>
     </nav>
-    <Outlet />
   </>
 );
 
