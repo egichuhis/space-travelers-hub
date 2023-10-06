@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet, NavLink } from 'react-router-dom';
+import { Outlet, NavLink, Link } from 'react-router-dom';
 import './NavBar.css';
 import LogoImg from '../../imgs/planet.png';
 
@@ -8,7 +8,7 @@ const NavBar = () => (
     <nav className="navbar navbar-expand-md bg-body py-3 shadow">
 
       <div className="container">
-        <a className="navbar-brand d-flex align-items-center" href="/">
+        <Link className="navbar-brand d-flex align-items-center" to="/">
           <span
             className="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"
           >
@@ -20,7 +20,7 @@ const NavBar = () => (
 
           </span>
           <span className="ms-2">Space Travelers Hub</span>
-        </a>
+        </Link>
         <button
           type="button"
           className="navbar-toggler"
